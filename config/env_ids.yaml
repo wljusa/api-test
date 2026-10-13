@@ -1,0 +1,7 @@
+# common 与当前 TEST_ENV 节合并：同名 list 追加，其它类型由环境节覆盖。
+common:
+  app_name: demo
+test:
+  user_id: 1
+prod:
+  user_id: 2

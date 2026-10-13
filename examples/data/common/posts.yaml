@@ -1,0 +1,29 @@
+- feature: 文章
+  story: 列表
+  title: 查询文章列表
+  request:
+    method: GET
+    url: /api/posts
+    headers:
+      token: app_token
+    params: {}
+    validate:
+      status_code: 200
+      code: 0
+      msg: ""
+      expected_fields: ["list", "total"]
+      forbidden_fields: ["createBy", "modifyBy"]
+
+- feature: 文章
+  story: 列表
+  title: 未登录查询文章
+  request:
+    method: GET
+    url: /api/posts
+    headers:
+      token: no_token
+    params: {}
+    validate:
+      status_code: 200
+      code: 10016
+      msg: 未登录

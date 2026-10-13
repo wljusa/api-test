@@ -1,0 +1,19 @@
+- feature: 用户
+  story: 资料
+  title: 按环境 ID 查询用户
+  request:
+    method: GET
+    url: /api/profile
+    headers:
+      token: app_token
+    params:
+      userId: "${user_id}"
+    validate:
+      status_code: 200
+      code: 0
+      msg: ""
+      expected_fields: ["userId", "name"]
+      expected_data:
+        userId: "${user_id}"
+        name: demo
+      forbidden_fields: ["createBy", "modifyBy"]

@@ -1,0 +1,32 @@
+- feature: 认证
+  story: 登录
+  title: 账号密码登录
+  request:
+    method: POST
+    url: /api/login
+    headers:
+      token: no_token
+    params:
+      username: demo
+      password: demo
+    validate:
+      status_code: 200
+      code: 0
+      msg: ""
+      expected_fields: ["token"]
+
+- feature: 认证
+  story: 登录
+  title: 错误密码
+  request:
+    method: POST
+    url: /api/login
+    headers:
+      token: no_token
+    params:
+      username: demo
+      password: wrong
+    validate:
+      status_code: 200
+      code_not: [0]
+      msg: 账号或密码错误

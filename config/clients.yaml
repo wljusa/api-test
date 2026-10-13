@@ -1,0 +1,8 @@
+# 客户端声明。新增一端时复制一段，改 base_url / token_key / headers 即可。
+# base_url 可按环境写成映射：{test: ..., prod: ...}，也可写成单个地址。
+app:
+  base_url: http://127.0.0.1:8765
+  token_key: app_token
+  headers:
+    ctype: "1"
+  max_elapsed_sec: 2.0
